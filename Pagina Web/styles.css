@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+   
+
+    background: url('https://steamuserimages-a.akamaihd.net/ugc/778474701534406156/A5FAA475B9EA77DB0D6846A177E50BF24AB141AC/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false')
+
+
+}
+
+
+
+header {
+    background: #222;
+    color: white;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h1, h2 {
+    color: #222;
+}
+
+.blog-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blog-post {
+    background: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.blog-post:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.blog-content {
+    width: 100%;
+}
+
+.blog-image {
+    width: 100%;
+    height: 150px;
+    background: url('https://images.steamusercontent.com/ugc/25437282438345723/751D7291ED22768650BD37E0BF6B060F94F5D542/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') center/cover no-repeat;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.blog-image-2 {
+    width: 100%;
+    height: 150px;
+    background: url('https://images.steamusercontent.com/ugc/34437671269086481/44D7EB64EFB39C2D97F002984127B0C831CC28A5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') center/cover no-repeat;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.blog-image-1 {
+    width: 100%;
+    height: 150px;
+    background: url('https://images.steamusercontent.com/ugc/45696670335770929/E77C251631B1D3DBC6C1E3F6577BC2729C93FEE5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') center/cover no-repeat;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+.blog-image-3 {
+    width: 100%;
+    height: 150px;
+    background: url('https://images.steamusercontent.com/ugc/40068455108568683/36A85320290F1D5BD32CAA8DAA49A5B32D99251D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false') center/cover no-repeat;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.blog-text {
+    width: 80%;
+    height: 20px;
+    background: #d50f0f;
+    border-radius: 5px;
+}
+

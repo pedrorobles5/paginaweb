@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mods Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mods Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+               
+                <li><a href="#subir">Subir Mod</a></li>
+             
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="blog">
+            <h2 class="blog-title">Ultimos Mods</h2>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <div class="avatar"></div>
+                    <div class="blog-image-3"></div>
+                    <div class="blog-content"> 
+                        
+                        
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="avatar"></div>
+                    <div class="blog-content">
+                        <div class="blog-image"></div>
+                        <div class="blog-text"></div>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="avatar"></div>
+                    <div class="blog-content">
+                        <div class="blog-image-1"></div>
+                        <div class="blog-text"></div>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="avatar"></div>
+                    <div class="blog-content">
+                        <div class="blog-image-2"></div>
+                        <div class="blog-text"></div>
+
+                    </div>
+                </div>
+            </div>
+            <link rel="stylesheet" href="styles.css">
+           
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const modDetails = [
+        {
+            title: 'Halo 3 Main Menu',
+            images: ['https://images.steamusercontent.com/ugc/2919914779766034/78D3E2964B841C964B0B71FC448FF6AFE73C6A2E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/2919914779771539/0CBF10F3492B32C5227C5CB0CFB1DAA2B402A36C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/2919914779772254/7B56AF34DE30CE4B1EE449BFD8750B2DBDFE1EC3/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'],
+            description: 'Menu personalizados e interactivos  de Halo 3'
+        },
+        {
+            title: 'Halo 2 Pack Maps',
+            images: ['https://images.steamusercontent.com/ugc/45696670335789651/89DD93351030D2F1678D10BC7A399B1495FC4979/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/45696670335789659/9B19C004B0C54FEDC5F31237426FAEE070DF489F/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/45696670335789665/3A71B4E6884499F11E6DCCF49D4E1AF20AC87049/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'],
+            description: 'Nuevos mapas multijugador para Halo2'
+        },
+        {
+            title: 'Trooper Firefight | Campaign',
+            images: ['https://images.steamusercontent.com/ugc/25432209478685576/763F4F3E0412EF1ACFF4D6C12CCAEEA11EF3E992/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/25432209478693219/212AA6AA717DE4DD4647D4E0CD600216389D072C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/25432209478691318/54201B55E550F2B5910901F9F15B0985B60380CC/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'],
+            description: 'Descripción del Mod 3'
+        },
+        {
+            title: 'Undeadkivas Halo 3: ODST Firefight',
+            images: ['https://images.steamusercontent.com/ugc/34437671268943395/228866072AAD4C60CC393F06D216CCD1546D9402/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/34437671268991823/D1729E3A6013A79ABEA5447FA1AA9A433A909D11/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false', 'https://images.steamusercontent.com/ugc/34437671269006447/C69E2FD073339BCEDA4E39BEC46290D8DD843197/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'],
+            description: 'Descripción del Mod 4'
+        }
+    ];
+
+    document.querySelectorAll('.blog-post').forEach((post, index) => {
+        post.addEventListener('click', () => {
+            let mod = modDetails[index];
+            let currentIndex = 0;
+            Swal.fire({
+                title: mod.title,
+                html: `
+                    <div id='carousel-${index}' class='carousel'>
+                        <button id='prev-${index}' class='carousel-btn'>&#9665;</button>
+                        <img id='carousel-img-${index}' src='${mod.images[0]}' class='carousel-image' style='display: block;'>
+                        <button id='next-${index}' class='carousel-btn'>&#9655;</button>
+                    </div>
+                    <p>${mod.description}</p>
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Descargar',
+                cancelButtonText: 'Cerrar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'https://descarga';
+                }
+            });
+
+            document.getElementById(`prev-${index}`).addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + mod.images.length) % mod.images.length;
+                document.getElementById(`carousel-img-${index}`).src = mod.images[currentIndex];
+            });
+
+            document.getElementById(`next-${index}`).addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % mod.images.length;
+                document.getElementById(`carousel-img-${index}`).src = mod.images[currentIndex];
+            });
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % mod.images.length;
+                document.getElementById(`carousel-img-${index}`).src = mod.images[currentIndex];
+            }, 3000);
+        });
+    });
+
+   
+</script>
+
+  
+;
+
+</script>
+
+<style>
+    .carousel {
+        width: 400px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .carousel-btn {
+        position: absolute;
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .carousel-btn:first-of-type {
+        left: 10px;
+    }
+    .carousel-btn:last-of-type {
+        right: 10px;
+    }
+</style>
+
+            
+        </section>
+    </main>
+</body>
+</html>
